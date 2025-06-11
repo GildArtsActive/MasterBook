@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" fill="currentColor"/>
+                    <path d="M12 22V12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 12L21 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 12L3 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h1 class="app-title">MASTERBOOK</h1>
+            </div>
+            <nav class="header-nav">
+                <div class="year-controls">
+                    <button id="prevYear" class="nav-button" aria-label="Previous year">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="year-display">
+                        <span id="currentYear">2023</span>
+                    </div>
+                    <button id="nextYear" class="nav-button" aria-label="Next year">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="activity-controls">
+        <div class="activity-selector">
+            <select id="activityType">
+                <option value="work">Work</option>
+                <option value="exercise">Exercise</option>
+                <option value="study">Study</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="color" id="activityColor" value="#9be9a8">
+            <input type="text" id="activityName" placeholder="Activity name">
+            <button id="addActivity">Add Activity</button>
+            <button id="markToday" class="mark-today-btn">Mark Today</button>
+        </div>
+    </div>
+    <div id="activityLegend" class="activity-legend"></div>
+    <div class="calendar" id="calendar"></div>
+    
+    <div class="legend">
+        <div class="legend-title">Activity Frequency</div>
+        <div class="legend-scale">
+            <div class="legend-item">
+                <span class="legend-label">Less</span>
+                <div class="legend-colors">
+                    <span class="legend-color" style="background-color: #40c463;"></span>
+                    <span class="legend-color" style="background-color: #2188ff;"></span>
+                    <span class="legend-color" style="background-color: #ffd33d;"></span>
+                    <span class="legend-color" style="background-color: #cb2431;"></span>
+                </div>
+                <span class="legend-label">More</span>
+            </div>
+        </div>
+        <div class="legend-note">Click to cycle through activity levels</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
